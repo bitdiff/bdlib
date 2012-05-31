@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitdiff.Utils", "Bitdiff.Utils\Bitdiff.Utils.csproj", "{D83EDA6F-D10E-4F5C-925D-ABD4D523E0BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bitdiff.Tests", "Bitdiff.Tests\Bitdiff.Tests.csproj", "{1D6AEFB1-293E-47D7-AABA-A9FDE0191B6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D83EDA6F-D10E-4F5C-925D-ABD4D523E0BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83EDA6F-D10E-4F5C-925D-ABD4D523E0BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83EDA6F-D10E-4F5C-925D-ABD4D523E0BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83EDA6F-D10E-4F5C-925D-ABD4D523E0BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D6AEFB1-293E-47D7-AABA-A9FDE0191B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6AEFB1-293E-47D7-AABA-A9FDE0191B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6AEFB1-293E-47D7-AABA-A9FDE0191B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6AEFB1-293E-47D7-AABA-A9FDE0191B6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
