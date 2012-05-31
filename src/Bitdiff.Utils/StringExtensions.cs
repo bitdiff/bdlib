@@ -29,6 +29,12 @@ namespace Bitdiff.Utils
             return null;
         }
 
+        public static bool TryFromJson<T>(this string value, out T result) where T : class
+        {
+            result = value.FromJson<T>();
+            return result != null;
+        }
+
         public static string AsNullIfEmpty(this string input)
         {
             return input.DoesNotHaveValue() ? null : input;
@@ -88,13 +94,13 @@ namespace Bitdiff.Utils
             if (input.Length <= maxLength)
                 return input;
 
-            var suffix = "...";
+            const string suffix = "...";
             var suffixLength = suffix.Length;
 
-            int index = input.Trim().LastIndexOf(" ");
+            int index = input.Trim().LastIndexOf(" ", StringComparison.Ordinal);
 
             while ((index + suffixLength) > maxLength)
-                index = input.Substring(0, index).Trim().LastIndexOf(" ", StringComparison.OrdinalIgnoreCase);
+                index = input.Substring(0, index).Trim().LastIndexOf(" ", StringComparison.Ordinal);
 
             if (index > 0)
                 return input.Substring(0, index) + suffix;
