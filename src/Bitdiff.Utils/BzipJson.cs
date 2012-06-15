@@ -3,7 +3,7 @@ using System.Text;
 using System.Web.Script.Serialization;
 using ICSharpCode.SharpZipLib.BZip2;
 
-namespace Bitdiff.Utils.Utils
+namespace Bitdiff.Utils
 {
     public class BzipJson
     {

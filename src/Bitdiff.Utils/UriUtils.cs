@@ -3,7 +3,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace Bitdiff.Utils.Utils
+namespace Bitdiff.Utils
 {
     public static class UriUtils
     {

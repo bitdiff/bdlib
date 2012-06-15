@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Bitdiff.Utils.Utils
+namespace Bitdiff.Utils
 {
     public class UriHttpResponseSummary
     {
