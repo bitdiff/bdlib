@@ -17,7 +17,12 @@ namespace Bitdiff.Utils
 
         public void Info(string tag, string message, params object[] args)
         {
-            LogManager.GetLogger(tag).Info(String.Format(message, args));
+            LogManager.GetLogger(tag).InfoFormat(message, args);
+        }
+
+        public void Debug(string tag, string message, params object[] args)
+        {
+            LogManager.GetLogger(tag).DebugFormat(message, args);
         }
     }
 }
