@@ -29,5 +29,15 @@ namespace Bitdiff.Utils
 
             batcher.Batch(items, batchSize, action);
         }
+
+        public static bool HasAny<T>(this IEnumerable<T> items)
+        {
+            return items != null && items.Any();
+        }
+
+        public static bool DoesNotHaveAny<T>(this IEnumerable<T> items)
+        {
+            return !items.HasAny();
+        }
     }
 }
