@@ -8,5 +8,6 @@ namespace Bitdiff.Utils
         void Error(string tag, Exception exception);
         void Info(string tag, string message, params object[] args);
         void Debug(string tag, string message, params object[] args);
+        void Warn(string tag, string message, params object[] args);
     }
 }

@@ -24,5 +24,10 @@ namespace Bitdiff.Utils
         {
             LogManager.GetLogger(tag).DebugFormat(message, args);
         }
+
+        public void Warn(string tag, string message, params object[] args)
+        {
+            LogManager.GetLogger(tag).WarnFormat(message, args);
+        }
     }
 }
