@@ -7,32 +7,6 @@ namespace Bitdiff.Utils
 {
     public static class UriUtils
     {
-        public static string BzipJsonPost(this Uri url, object data)
-        {
-            byte[] json = BzipJson.ConvertObjectToBzipJson(data);
-            return HttpSendBytes(url, "POST", json, "application/octet-stream", null).GetDataChecked();
-        }
-
-        public static string JsonDelete(this Uri url, object data)
-        {
-            return HttpSend(url, "DELETE", data.ToJson(), "application/json").GetDataChecked();
-        }
-
-        public static string JsonPost(this Uri url, object data)
-        {
-            return HttpSend(url, "POST", data.ToJson(), "application/json").GetDataChecked();
-        }
-
-        public static string JsonPut(this Uri url, object data)
-        {
-            return HttpSend(url, "PUT", data.ToJson(), "application/json").GetDataChecked();
-        }
-
-        public static T JsonGet<T>(this Uri url) where T : class
-        {
-            return HttpSend(url, "GET").GetDataChecked().FromJson<T>();
-        }
-
         public static string Get(this Uri url)
         {
             return HttpSend(url, "GET").GetDataChecked();

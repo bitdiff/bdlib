@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using System.Runtime.Serialization;
-using System.Web.Script.Serialization;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -8,12 +7,6 @@ namespace Bitdiff.Utils
 {
     public static class ObjectExtensions
     {
-        public static string ToJson(this object input)
-        {
-            var serializer = new JavaScriptSerializer();
-            return serializer.Serialize(input);
-        }
-
         public static T EnsureNotNull<T>(this T input) where T : class, new()
         {
             return input ?? new T();

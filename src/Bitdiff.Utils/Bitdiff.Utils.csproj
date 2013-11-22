@@ -31,13 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\sharpziplib\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\lib\log4net\1.2.10\release\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -74,8 +67,6 @@
     <Compile Include="IClock.cs" />
     <Compile Include="ICookie.cs" />
     <Compile Include="IHttpContextFactory.cs" />
-    <Compile Include="ILogger.cs" />
-    <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Markdown.cs" />
     <Compile Include="PaginatedList.cs" />
     <Compile Include="PaginationDefaults.cs" />
@@ -88,7 +79,6 @@
     <Compile Include="ArrayLocationCalculator.cs" />
     <Compile Include="SlugGenerator.cs" />
     <Compile Include="StringExtensions.cs" />
-    <Compile Include="BzipJson.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="UriHttpResponseSummary.cs" />
     <Compile Include="UriUtils.cs" />

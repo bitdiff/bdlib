@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web.Script.Serialization;
 
 namespace Bitdiff.Utils
 {
@@ -10,30 +9,6 @@ namespace Bitdiff.Utils
         private static readonly Regex NonAlphaNumericCharacters = new Regex(@"[^A-Za-z0-9]+", RegexOptions.Compiled);
         private static readonly Markdown Markdown = new Markdown();
         private static readonly SlugGenerator SlugGenerator = new SlugGenerator();
-
-        public static T FromJson<T>(this string value) where T : class
-        {
-            if (!String.IsNullOrEmpty(value))
-            {
-                JavaScriptSerializer serializer = new JavaScriptSerializer();
-                try
-                {
-                    return serializer.Deserialize<T>(value);
-                }
-                catch (ArgumentException)
-                {
-                    return null;
-                }
-            }
-
-            return null;
-        }
-
-        public static bool TryFromJson<T>(this string value, out T result) where T : class
-        {
-            result = value.FromJson<T>();
-            return result != null;
-        }
 
         public static string AsNullIfEmpty(this string input)
         {
@@ -78,12 +53,12 @@ namespace Bitdiff.Utils
             return cultureInfo.TextInfo.ToTitleCase(input.ToLower());
         }
 
-        public static bool Contains(this string input, string value, StringComparison comparisionType)
+        public static bool Contains(this string input, string value, StringComparison comparisonType)
         {
             if (input.DoesNotHaveValue())
                 return false;
 
-            return input.IndexOf(value, comparisionType) >= 0;
+            return input.IndexOf(value, comparisonType) >= 0;
         }
 
         public static string Truncate(this string input, int maxLength)
@@ -126,6 +101,11 @@ namespace Bitdiff.Utils
         public static string ToHtmlFromMarkdown(this string markdown)
         {
             return Markdown.Transform(markdown);
+        }
+
+        public static string F(this string input, params object[] args)
+        {
+            return String.Format(input, args);
         }
     }
 }
