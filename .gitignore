@@ -45,3 +45,5 @@ _ReSharper.*
 *~
 *.swp
 imagecache
+.vs/
+project.lock.json

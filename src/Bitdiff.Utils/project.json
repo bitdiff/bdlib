@@ -1,0 +1,21 @@
+{
+  "version": "3.0.0-*",
+
+  "frameworks": {
+    "net451": {
+      "frameworkAssemblies": {
+        "System.Web": "4.0.0.0",
+        "System.Web.Extensions": "4.0.0.0",
+        "System.Xml": "4.0.0.0",
+        "System.Runtime.Caching": "4.0.0.0",
+        "System.Configuration": "4.0.0.0",
+        "System.Runtime.Serialization": "4.0.0.0"
+      },
+      "dependencies": {
+      }
+    }
+  },
+  "runtimes": {
+    "win": {}
+  }
+}
