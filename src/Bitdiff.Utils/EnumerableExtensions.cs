@@ -6,7 +6,7 @@ namespace Bitdiff.Utils
 {
     public static class EnumerableExtensions
     {
-        public static void Batch<T>(this IEnumerable<T> items, int batchSize, Action<IEnumerable<T>> action)
+        public static void Batch<T>(this IEnumerable<T> items, int batchSize, Action<IEnumerable<T>, int> action)
         {
             new Batcher().Batch(items, batchSize, action);
         }
@@ -17,9 +17,9 @@ namespace Bitdiff.Utils
             return new PaginatedList<TResult>(source.Select(selector), source.Paginator);
         }
 
-        public static void Batch<T>(this IEnumerable<T> items, int batchSize, Action<IEnumerable<T>> action, Action<object, BatchCompleteEventArgs> singleBatchCompleteEventHandler, Action<object, BatchEventArgs> completeEventHandler)
+        public static void Batch<T>(this IEnumerable<T> items, int batchSize, Action<IEnumerable<T>, int> action, Action<object, BatchCompleteEventArgs> singleBatchCompleteEventHandler, Action<object, BatchEventArgs> completeEventHandler)
         {
-            Batcher batcher = new Batcher();
+            var batcher = new Batcher();
 
             if (singleBatchCompleteEventHandler != null)
                 batcher.SingleBatchComplete += new EventHandler<BatchCompleteEventArgs>(singleBatchCompleteEventHandler);
