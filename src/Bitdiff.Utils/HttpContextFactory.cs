@@ -6,7 +6,8 @@ namespace Bitdiff.Utils
     {
         public HttpContextWrapper GetContext()
         {
-            return new HttpContextWrapper(HttpContext.Current);
+            var context = HttpContext.Current;
+            return context != null ? new HttpContextWrapper(context) : null;
         }
     }
 }
